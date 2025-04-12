@@ -1,158 +1,84 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 
 namespace rodne_cislo
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Zadejte rodné číslo: ");
-            string rodne_cislo = Console.ReadLine();
-            
-            if(rodne_cislo.Length == 6)
+            Console.Write("Zadejte rodné číslo: ");
+            string rc = Console.ReadLine();
+
+            if (rc.Length != 6)
             {
+                Console.WriteLine("Špatně zadáno");
+                return;
+            }
 
-            
+            int rok = int.Parse(rc.Substring(0, 2));
+            int mesic = int.Parse(rc.Substring(2, 2));
+            int den = int.Parse(rc.Substring(4, 2));
+
             string pohlavi = "";
-            string rok_narozeni = rodne_cislo.Substring(0, 2);
-            string mesic = rodne_cislo.Substring(2, 2);
-            string datum = rodne_cislo.Substring(4, 2);
-            string mesic_cely = "";
-
-
-            int mesic_int = int.Parse(mesic);
-            int rok_narozeni_int = int.Parse(rok_narozeni);
-
-            if(mesic_int <= 12 && mesic_int > 0)
+            if (mesic > 50)
+            {
+                pohlavi = "Žena";
+                mesic -= 50;
+            }
+            else
             {
                 pohlavi = "Muž";
             }
-            else if(mesic_int > 50)
-            {
-                pohlavi = "Žena";
-            }
-            if(mesic_int > 12 && mesic_int < 50 || mesic_int < 1 || mesic_int > 62)
+
+            if (mesic < 1 || mesic > 12)
             {
                 Console.WriteLine("Špatný měsíc");
-                Console.Read();
                 return;
             }
 
-            if (int.Parse(rok_narozeni) > 25)
-            {
-                rok_narozeni_int += 1900;
-            }
-            else
-            {
-                rok_narozeni_int += 2000;
-            }
-
-            if(int.Parse(datum) > 31 || int.Parse(datum) < 1)
+            if (den < 1 || den > 31)
             {
                 Console.WriteLine("Špatný den");
-                Console.Read();
                 return;
             }
 
-            if(pohlavi == "Žena")
+            if (rok > 25)
             {
-                mesic_int -= 50;
-                switch (mesic_int)
-                {
-                    case 01:
-                        mesic_cely = "leden";
-                        break;
-                    case 02:
-                        mesic_cely = "unor";
-                        break;
-                    case 03:
-                        mesic_cely = "brezen";
-                        break;
-                    case 04:
-                        mesic_cely = "duben";
-                        break;
-                    case 05:
-                        mesic_cely = "kveten";
-                        break;
-                    case 06:
-                        mesic_cely = "cerven";
-                        break;
-                    case 07:
-                        mesic_cely = "cervenec";
-                        break;
-                    case 08:
-                        mesic_cely = "srpen";
-                        break;
-                    case 09:
-                        mesic_cely = "zari";
-                        break;
-                    case 10:
-                        mesic_cely = "rijen";
-                        break;
-                    case 11:
-                        mesic_cely = "listopad";
-                        break;
-                    case 12:
-                        mesic_cely = "prosinec";
-                        break;
-                }
-                Console.WriteLine($"{pohlavi}, narozená {datum}.{mesic_cely} {rok_narozeni_int}");
+                rok += 1900;
             }
             else
             {
-                switch (mesic_int)
-                {
-                    case 01:
-                        mesic_cely = "leden";
-                        break;
-                    case 02:
-                        mesic_cely = "unor";
-                        break;
-                    case 03:
-                        mesic_cely = "brezen";
-                        break;
-                    case 04:
-                        mesic_cely = "duben";
-                        break;
-                    case 05:
-                        mesic_cely = "kveten";
-                        break;
-                    case 06:
-                        mesic_cely = "cerven";
-                        break;
-                    case 07:
-                        mesic_cely = "cervenec";
-                        break;
-                    case 08:
-                        mesic_cely = "srpen";
-                        break;
-                    case 09:
-                        mesic_cely = "zari";
-                        break;
-                    case 10:
-                        mesic_cely = "rijen";
-                        break;
-                    case 11:
-                        mesic_cely = "listopad";
-                        break;
-                    case 12:
-                        mesic_cely = "prosinec";
-                        break;
-                }
-                Console.WriteLine($"{pohlavi}, narozený {datum}.{mesic_cely} {rok_narozeni_int}");
+                rok += 2000;
             }
-            Console.ReadLine();
-            }
-            else
-            {
-                Console.WriteLine("Špatně zadáno");
-                Console.ReadLine();
 
+            string mesicNazev = "";
+            switch (mesic)
+            {
+                case 1: mesicNazev = "leden"; break;
+                case 2: mesicNazev = "unor"; break;
+                case 3: mesicNazev = "brezen"; break;
+                case 4: mesicNazev = "duben"; break;
+                case 5: mesicNazev = "kveten"; break;
+                case 6: mesicNazev = "cerven"; break;
+                case 7: mesicNazev = "cervenec"; break;
+                case 8: mesicNazev = "srpen"; break;
+                case 9: mesicNazev = "zari"; break;
+                case 10: mesicNazev = "rijen"; break;
+                case 11: mesicNazev = "listopad"; break;
+                case 12: mesicNazev = "prosinec"; break;
             }
+
+            string text = "";
+            if (pohlavi == "Žena")
+            {
+                text = "narozená";
+            }
+            else
+            {
+                text = "narozený";
+            }
+
+            Console.WriteLine($"{pohlavi}, {text} {den}.{mesicNazev} {rok}");
         }
     }
 }
