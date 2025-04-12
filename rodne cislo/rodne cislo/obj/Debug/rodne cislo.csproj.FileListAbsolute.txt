@@ -1,0 +1,14 @@
+R:\Programování\4. ročník\C#\rodne cislo\rodne cislo\bin\Debug\rodne cislo.exe.config
+R:\Programování\4. ročník\C#\rodne cislo\rodne cislo\bin\Debug\rodne cislo.exe
+R:\Programování\4. ročník\C#\rodne cislo\rodne cislo\bin\Debug\rodne cislo.pdb
+R:\Programování\4. ročník\C#\rodne cislo\rodne cislo\obj\Debug\rodne cislo.csproj.AssemblyReference.cache
+R:\Programování\4. ročník\C#\rodne cislo\rodne cislo\obj\Debug\rodne cislo.csproj.CoreCompileInputs.cache
+R:\Programování\4. ročník\C#\rodne cislo\rodne cislo\obj\Debug\rodne cislo.exe
+R:\Programování\4. ročník\C#\rodne cislo\rodne cislo\obj\Debug\rodne cislo.pdb
+H:\RodneCislo SK2\vrba rodne cislo\rodne cislo\rodne cislo\bin\Debug\rodne cislo.exe.config
+H:\RodneCislo SK2\vrba rodne cislo\rodne cislo\rodne cislo\bin\Debug\rodne cislo.exe
+H:\RodneCislo SK2\vrba rodne cislo\rodne cislo\rodne cislo\bin\Debug\rodne cislo.pdb
+H:\RodneCislo SK2\vrba rodne cislo\rodne cislo\rodne cislo\obj\Debug\rodne cislo.csproj.AssemblyReference.cache
+H:\RodneCislo SK2\vrba rodne cislo\rodne cislo\rodne cislo\obj\Debug\rodne cislo.csproj.CoreCompileInputs.cache
+H:\RodneCislo SK2\vrba rodne cislo\rodne cislo\rodne cislo\obj\Debug\rodne cislo.exe
+H:\RodneCislo SK2\vrba rodne cislo\rodne cislo\rodne cislo\obj\Debug\rodne cislo.pdb
